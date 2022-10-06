@@ -39,8 +39,9 @@ const Rentals = [
     image: require('../assets/home.png'),
     price: '$ 250,000,000/Year',
     room: '6 Bedroom',
-    bathroom: '4 Bathroom'
-
+    bathroom: '4 Bathroom',
+    imageProfile: require('../assets/person.png'),
+    descriptions:'The 3 level house that has a modern design, has a large pool and a garage that fits up to four cars...'
   },
   {
     id: '2',
@@ -50,7 +51,9 @@ const Rentals = [
     image: require('../assets/home3.png'),
     price: '$ 230,000,000/Year',
     room: '3 Bedroom',
-    bathroom: '3 Bathroom'
+    bathroom: '3 Bathroom',
+    imageProfile: require('../assets/person.png'),
+    descriptions:'The 3 level house that has a modern design, has a large pool and a garage that fits up to four cars... '
 
   },
   {
@@ -61,7 +64,10 @@ const Rentals = [
     image: require('../assets/home1.png'),
     price: '$ 450,000,000/Year',
     room: '12 Bedroom',
-    bathroom: '6 Bathroom'
+    bathroom: '6 Bathroom',
+    imageProfile: require('../assets/person.png'),
+    descriptions:'The 3 level house that has a modern design, has a large pool and a garage that fits up to four cars...'
+   
 
   },
   {
@@ -70,9 +76,11 @@ const Rentals = [
     agent: 'Jl. Sultan Iskandar Muda',
     location: '7.1 km',
     image: require('../assets/sitting.png'),
+    imageProfile: require('../assets/person.png'),
     price: '$ 200,000,000/Year',
     room: '2 Bedroom',
-    bathroom: '2 Bathroom'
+    bathroom: '2 Bathroom',
+    descriptions:'The 3 level house that has a modern design, has a large pool and a garage that fits up to four cars... '
 
   },
 ]
