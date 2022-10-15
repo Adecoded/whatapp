@@ -1,11 +1,12 @@
 import React from 'react'
 import { Text, View } from 'react-native'
-import ChatListItem from './src/components/ChatListItem'
+import ChatsScreen from './src/components/screens/ChatsScreen'
+
 
 function App() {
   return (
-   <View style={{flex:1,justifyContent:'center',alignItems:'center'}} >
-  <ChatListItem/>
+   <View style={{flex:1,justifyContent:'center',paddingVertical:60}} >
+ <ChatsScreen/>
    </View>
   )
 }
