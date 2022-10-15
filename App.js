@@ -1,18 +1,13 @@
-import { View, Text } from 'react-native'
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
-import DrawerNavigation from './Navigation/DrawerNavigation';
-import DetailScreen from './screen/DetailScreen';
+import { Text, View } from 'react-native'
+import ChatListItem from './src/components/ChatListItem'
 
-export default function App() {
-  const Stack =createStackNavigator();
+function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown:false}}>
-        <Stack.Screen name="HomeScreen" component={DrawerNavigation} />
-        <Stack.Screen name="Detail" component={DetailScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+   <View style={{flex:1,justifyContent:'center',alignItems:'center'}} >
+  <ChatListItem/>
+   </View>
   )
 }
+
+export default App
