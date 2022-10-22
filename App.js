@@ -1,12 +1,13 @@
 import React from 'react'
 import { Text, View } from 'react-native'
-import ChatsScreen from './src/components/screens/ChatsScreen'
-
+import { StatusBar } from 'expo-status-bar'
+import Navigator from './src/Navigator'
 
 function App() {
   return (
-   <View style={{flex:1,justifyContent:'center',paddingVertical:60}} >
- <ChatsScreen/>
+   <View style={{flex:1,justifyContent:'center',backgroundColor:'whitesmoke'}} >
+    <Navigator/>
+ <StatusBar/>
    </View>
   )
 }
