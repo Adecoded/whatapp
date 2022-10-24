@@ -1,31 +1,27 @@
-import React, { useEffect } from "react";
-import {
-  View,
-  ImageBackground,
-  StyleSheet,
-  FlatList,
-  KeyboardAvoidingView,
-  Platform,
-} from "react-native";
-import Bg from "../../assets/images/BG.png";
-import Message from "../components/Message";
-import messages from "../../assets/data/messages.json";
-import InputBox from "../components/InputBut";
-import { useNavigation, useRoute } from "@react-navigation/native";
-export default function ChatScreen() {
-  const navigation = useNavigation();
+import { useEffect } from 'react';
+import { ImageBackground, StyleSheet, FlatList, KeyboardAvoidingView } from 'react-native';
+import { useRoute, useNavigation } from '@react-navigation/native';
+import Message from '../components/Message';
+import InputBox from '../components/InputBox';
+
+import bg from '../../assets/images/BG.png';
+import messages from '../../assets/data/messages.json';
+
+const ChatScreen = () => {
   const route = useRoute();
+  const navigation = useNavigation();
 
   useEffect(() => {
     navigation.setOptions({ title: route.params.name });
   }, [route.params.name]);
+
   return (
     <KeyboardAvoidingView
-      behavior={Platform.OS === "ios" ? "padding" : "height"}
-      style={styles.Bg}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 62 :90}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 60 : 90}
+      style={styles.bg}
     >
-      <ImageBackground source={Bg} style={styles.Bg}>
+      <ImageBackground source={bg} style={styles.bg}>
         <FlatList
           data={messages}
           renderItem={({ item }) => <Message message={item} />}
@@ -36,12 +32,15 @@ export default function ChatScreen() {
       </ImageBackground>
     </KeyboardAvoidingView>
   );
-}
+};
+
 const styles = StyleSheet.create({
-  Bg: {
+  bg: {
     flex: 1,
   },
   list: {
     padding: 10,
   },
 });
+
+export default ChatScreen;

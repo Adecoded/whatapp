@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlatList, Text, View } from 'react-native'
+import { FlatList} from 'react-native'
 import chats from '../../assets/data/chats.json'
 export default function ContactScreen() {
   return (

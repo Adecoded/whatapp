@@ -1,15 +1,21 @@
-import React from 'react'
-import { Text, View } from 'react-native'
-import { StatusBar } from 'expo-status-bar'
-import Navigator from './src/Navigator'
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, View } from 'react-native';
+import Navigator from './src/navigation';
 
-function App() {
+export default function App() {
   return (
-   <View style={{flex:1,justifyContent:'center',backgroundColor:'whitesmoke'}} >
-    <Navigator/>
- <StatusBar/>
-   </View>
-  )
+    <View style={styles.container}>
+      <Navigator />
+
+      <StatusBar style="auto" />
+    </View>
+  );
 }
 
-export default App
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'whitesmoke',
+    justifyContent: 'center',
+  },
+});

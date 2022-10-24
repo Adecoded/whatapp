@@ -1,62 +1,67 @@
-import React from "react";
-import { Text, View, Image, StyleSheet, Pressable } from "react-native";
-import dayjs from "dayjs";
+import { Text, View, Image, StyleSheet, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
+import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { useNavigation } from "@react-navigation/native";
 
 dayjs.extend(relativeTime);
-export default function ChatListItem({chat}) {
-  const navigation =useNavigation();
+
+const ChatListItem = ({ chat }) => {
+  const navigation = useNavigation();
+
   return (
-    <Pressable onPress={() =>navigation.navigate('Chat',{id:chat.id,name:chat.user.name})} style={styles.container}>
-      <Image
-        source={{uri:chat.user.image}}
-        style={styles.image}
-      />
+    <Pressable
+      onPress={() => navigation.navigate('Chat', { id: chat.id, name: chat.user.name })}
+      style={styles.container}
+    >
+      <Image source={{ uri: chat.user.image }} style={styles.image} />
 
       <View style={styles.content}>
         <View style={styles.row}>
-          <Text numberOfLines={1} style={styles.name}>
-         { chat.user.name}
+          <Text style={styles.name} numberOfLines={1}>
+            {chat.user.name}
           </Text>
           <Text style={styles.subTitle}>{dayjs(chat.lastMessage.createdAt).fromNow(true)}</Text>
         </View>
-        <Text numberOfLines={1} style={styles.subTitle}>
-         { chat.lastMessage.text}
+
+        <Text numberOfLines={2} style={styles.subTitle}>
+          {chat.lastMessage.text}
         </Text>
       </View>
     </Pressable>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
+    flexDirection: 'row',
     marginHorizontal: 10,
     marginVertical: 5,
-    marginRight: 10,
     height: 70,
   },
   image: {
     width: 60,
     height: 60,
     borderRadius: 30,
-    marginRight:10
+    marginRight: 10,
   },
   content: {
     flex: 1,
-    borderBottomWidth:StyleSheet.hairlineWidth,
-    borderColor:'lightgray'
+
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: 'lightgray',
   },
   row: {
-    flexDirection: "row",
+    flexDirection: 'row',
     marginBottom: 5,
   },
   name: {
     flex: 1,
-    fontWeight: "bold",
+    fontWeight: 'bold',
   },
   subTitle: {
-    color: "gray",
+    color: 'gray',
   },
 });
+
+export default ChatListItem;
