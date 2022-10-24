@@ -3,41 +3,36 @@
   "cognitoConfig": {
     "identityPoolName": "testAuthIdentityPool",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "whatsa8f17ab6a",
-    "userPoolName": "Whatsapp",
+    "resourceNameTruncated": "whatsaf282e135",
+    "userPoolName": "whatsapp",
     "autoVerifiedAttributes": [
-      "email"
+      "phone_number"
     ],
     "mfaConfiguration": "OFF",
     "mfaTypes": [
       "SMS Text Message"
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
-    "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Verification code: {####}",
-    "emailVerificationMessage": "Verification code: {####}",
+    "smsVerificationMessage": "Verification code: {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
-    "passwordPolicyCharacters": [
-      "Requires Lowercase",
-      "Requires Numbers",
-      "Requires Symbols",
-      "Requires Uppercase"
-    ],
+    "passwordPolicyCharacters": [],
     "requiredAttributes": [],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [],
     "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "Whatsa8f17ab6a_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "whatsaf282e135_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "8f17ab6a",
-    "resourceName": "Whatsapp",
+    "sharedId": "f282e135",
+    "resourceName": "whatsapp",
     "authSelections": "identityPoolAndUserPool",
     "serviceName": "Cognito",
     "usernameAttributes": [
-      "email"
+      "phone_number"
     ],
     "useDefault": "manual",
     "userPoolGroups": false,
@@ -48,4 +43,4 @@
     "usernameCaseSensitive": false,
     "useEnabledMfas": true
   }
-} 
+}
